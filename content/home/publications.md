@@ -66,8 +66,10 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-test2
-
+- [x] Write math example
+- [x] Write diagram example
+- [ ] Do something else
+                              
 
 {{% alert note %}}
 Quickly discover relevant content by [filtering publications]({{< ref "/publication/_index.md" >}}).
