@@ -67,6 +67,16 @@ subtitle = ""
  css_class = ""
 +++
 this is publicationsCopy
+   
+                           
+```{r}
+cars <- c(1, 3, 6, 4, 9)
+
+# Graph the cars vector with all defaults
+plot(cars)
+```                           
+   
+   
                               
 
 {{% alert note %}}
