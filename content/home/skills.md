@@ -32,6 +32,12 @@ subtitle = ""
   name = "Relational Database"
   description = "SQL Server, Teradata"
 
+[[feature]]
+  icon = "server"
+  icon_pack = "fas"
+  name = "Methodology"
+  description = "Agile, Waterfall SDLCs, Projects"
+
 # Uncomment to use emoji icons.
 # [[feature]]
 #  icon = ":smile:"
