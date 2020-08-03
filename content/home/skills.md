@@ -17,20 +17,20 @@ subtitle = ""
 [[feature]]
   icon = "r-project"
   icon_pack = "fab"
-  name = "R"
-  description = "90%"
+  name = "R Programming"
+  description = "Graph Theory, Process Mining, Topic Modelling, Statistics"
   
 [[feature]]
   icon = "chart-line"
   icon_pack = "fas"
-  name = "Statistics"
-  description = "100%"  
+  name = "Data Visualisation"
+  description = "Shiny Apps, Power BI, Tableau"  
   
 [[feature]]
   icon = "camera-retro"
   icon_pack = "fas"
-  name = "Photography"
-  description = "10%"
+  name = "Relational Database"
+  description = "SQL Server, Teradata"
 
 # Uncomment to use emoji icons.
 # [[feature]]
