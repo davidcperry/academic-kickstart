@@ -8,8 +8,6 @@ weight = 30  # Order that this section will appear.
 title = "Skills"
 subtitle = ""
 
-tags = ["DataVis", "Visualisation"]
-
 # Showcase personal skills or business features.
 # 
 # Add/remove as many `[[feature]]` blocks below as you like.
