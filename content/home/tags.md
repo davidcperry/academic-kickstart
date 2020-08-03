@@ -8,6 +8,9 @@ weight = 120  # Order that this section will appear.
 title = "Popular Topics"
 subtitle = ""
 
+tags = ["DataVis", "Visualisation"]
+
+
 [content]
   # Choose the taxonomy from `config.toml` to display (e.g. tags, categories)
   taxonomy = "tags"
