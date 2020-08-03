@@ -27,7 +27,7 @@ subtitle = ""
   description = "Shiny Apps, Power BI, Tableau"  
   
 [[feature]]
-  icon = "camera-retro"
+  icon = "database"
   icon_pack = "fas"
   name = "Relational Database"
   description = "SQL Server, Teradata"
