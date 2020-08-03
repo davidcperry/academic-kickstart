@@ -22,9 +22,9 @@ bio: graphy theory, process analytics, business analytics
 
 interests:
 - Data Analysis and Visualisation
-- Graph Theory
-- Linguistics
-- Process Optimisation
+- Graph Theory, Network Analysis
+- Linguistics, Topic Modelling, Sentiment Analysis
+- Operational Efficiency and Process Optimisation
 
 education:
   courses:

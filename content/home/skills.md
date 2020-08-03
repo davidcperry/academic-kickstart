@@ -29,14 +29,9 @@ subtitle = ""
 [[feature]]
   icon = "database"
   icon_pack = "fas"
-  name = "Relational Database"
-  description = "SQL Server, Teradata"
+  name = "Relational Databases"
+  description = "Microsoft SQL Server"
 
-[[feature]]
-  icon = "server"
-  icon_pack = "fas"
-  name = "Methodology"
-  description = "Agile, Waterfall SDLCs, Projects"
 
 # Uncomment to use emoji icons.
 # [[feature]]
