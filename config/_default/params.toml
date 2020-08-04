@@ -97,7 +97,8 @@ phone = ""
 
 # Geographic coordinates
 # To get your coordinates, right-click on Google Maps and choose "What's here?". The coords will show up at the bottom.
-coordinates = {latitude = "37.4275", longitude = "-122.1697"}
+coordinates = {latitude = "-33.867375", longitude = "151.207775"}
+
 
 # Directions for visitors to locate you.
 directions = ""
