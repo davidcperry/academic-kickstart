@@ -18,7 +18,7 @@ organizations:
   url: ""
 
 # Short bio (displayed in user profile at end of posts)
-bio: graphy theory, process analytics, business analytics
+bio: process efficiency, data viz, graphy theory
 
 interests:
 - Data Analysis and Visualisation
