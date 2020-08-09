@@ -37,8 +37,7 @@ plot(cars)
 
 library(bupaR)
 eldata <- read_xes("G:/OneDrive/Documents/buparProject/data/Disc_p1_t1.xes")
-eldata %>%
-  process_map()
+process_map(eldata)
 
 ```
 
