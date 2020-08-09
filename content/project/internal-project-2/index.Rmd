@@ -39,6 +39,8 @@ library(bupaR)
 eldata <- read_xes("G:/OneDrive/Documents/buparProject/data/GT_p1_t1.xes")
 process_map(eldata)
 
+animate_process(eldata)
+
 # eldata
 nrow(eldata)
 
