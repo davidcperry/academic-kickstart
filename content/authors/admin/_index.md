@@ -21,10 +21,12 @@ organizations:
 bio: process efficiency, data viz, graphy theory
 
 interests:
-- Data Analysis and Visualisation
-- Graph Theory, Network Analysis
-- Linguistics, Topic Modelling, Sentiment Analysis
 - Operational Efficiency and Process Optimisation
+- Business Analysis
+- Data Visualisation
+- Graph Theory, Network Analysis
+- Topic Modelling, Sentiment Analysis
+
 
 education:
   courses:
