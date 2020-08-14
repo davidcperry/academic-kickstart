@@ -31,4 +31,4 @@ slides: example
 
 ```
 
-This is coming soon !
+This is coming soon !!

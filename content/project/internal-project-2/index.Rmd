@@ -49,6 +49,7 @@ Tools like R provide an ideal platform for getting into a journey of process min
 There is a brilliant R library centered on process mining from the people here:
 
 ```{r}
+library(bupaR)
 citation("bupar")
 ```
 
@@ -62,7 +63,6 @@ eldata <- read_xes("G:/OneDrive/Documents/buparProject/data/GT_p1_t1.xes")
 process_map(eldata)
 
 animate_process(eldata)
-citation("bupar")
 
 # eldata
 nrow(eldata)
