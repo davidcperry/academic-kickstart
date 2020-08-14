@@ -50,7 +50,7 @@ There is a brilliant R library centered on process mining from the people here:
 
 ```{r}
 library(bupaR)
-citation("bupar")
+citation("bupaR")
 ```
 
 I'm going to use buparR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
