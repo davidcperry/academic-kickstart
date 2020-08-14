@@ -31,6 +31,10 @@ subtitle = ""
      tag = "Process Mining"
   
    [[content.filter_button]]
+     name = "Topic Modelling"
+     tag = "Topic Modelling"
+  
+   [[content.filter_button]]
      name = "Other"
      tag = "Demo"
 

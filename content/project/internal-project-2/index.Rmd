@@ -25,11 +25,36 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: example
 ---
-```{r}
-cars <- c(1, 3, 6, 1, 1, 1, 2, 3, 4, 5)
 
-# Graph the cars vector with all defaults
-plot(cars)
+Big Processes are a Big Topic in data analytics. This is particularly true in enterprises who are placing a heavy emphasis on operational efficiency and are looking to move towards a culture of continual improvement.
+
+One of the ways businesses are tackling process analysis is via techniques like "process mining". 
+
+Process mining is a a set of analytical techniques we can use to gain insights into the following types of questions:
+
+- Process discovery - what is really happening, understand the current process, especially where no previous odel of a process may exist
+
+- How often are activities performed ?
+
+- Who are the fastest at performing certain tasks ?
+
+- What is the "cycle" time ? What is the "waiting" time ?
+
+- How often do "handoffs" occur ?
+
+- ... and many other questions !
+
+Tools like R provide an ideal platform for getting into a journey of process mining.
+
+There is a brilliant R library centered on process mining from the people here:
+
+```{r}
+citation("bupar")
+```
+
+I'm going to use buparR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
+
+```{r}
 
 library(bupaR)
 library(processanimateR)
@@ -37,7 +62,7 @@ eldata <- read_xes("G:/OneDrive/Documents/buparProject/data/GT_p1_t1.xes")
 process_map(eldata)
 
 animate_process(eldata)
-
+citation("bupar")
 
 # eldata
 nrow(eldata)
@@ -48,4 +73,4 @@ nrow(eldata)
 
 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. 
+More text 
