@@ -32,9 +32,10 @@ One of the ways businesses are tackling process analysis is via techniques like 
 
 Process mining is a a set of analytical techniques we can use to gain insights into the following types of questions:
 
-- Process discovery - what is really happening, understand the current process, especially where no previous odel of a process may exist
+- Process discovery - what is really happening ? How can we understand the current process, especially where no formal model artefacts may exist ?
 
 - How often are activities performed ?
+
 - Who are the fastest at performing certain tasks ?
 
 - What is the "cycle" time ? What is the "waiting" time ?
@@ -50,26 +51,32 @@ There is a brilliant R library centered on process mining from the people here:
   Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R package
   version 0.4.4. https://CRAN.R-project.org/package=bupaR
 
-```{r do_initial, warning=FALSE, message=FALSE}
-library(bupaR)
-```
+I'm going to use bupaR and its suite of related packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. I've synthesised this data for demonstration purposes. 
 
-I'm going to use bupaR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
+Business process management (BPM) or typical workflow type applications which are ubiquitous in corporate settings are a common candidate for this type of data supply for analysis.
+
+First up, get the data from an Excel file I created earlier:
 
 ```{r get_the_data, warning=FALSE, message=FALSE}
 
-library(bupaR)
 library(readxl)
+
+auditextract <- read_excel("G:/OneDrive/Documents/bupaR/AuditExtract1.xlsx")
+
+```
+
+Then, load up the required bupaR libraries and create an event log object from the source while mapping the relevant columns into the event log construct in bupaR:
+
+```{r create_event_log, warning=FALSE, message=FALSE}
+
+library(bupaR)
 library(processanimateR)
-eldata <- read_excel("G:/OneDrive/Documents/buparProject/datasfs/AuditExtract1.neutralise.xlsx")
 
-wfted <- eldata
-
-wftel <- wfted %>%
+el <- auditextract %>%
   mutate(status = "complete",
          activity_instance = 1:nrow(.)) %>%
   eventlog(
-    case_id = "AuditDealID",
+    case_id = "AuditCaseID",
     activity_id = "StatusDescription",
     activity_instance_id = "rowid",
     lifecycle_id = "status",
@@ -77,19 +84,18 @@ wftel <- wfted %>%
     resource_id = "ResourceName2"
   )
 
-process_map(wftel)
-
 # animate_process(eldata)
-
-# eldata
-nrow(eldata)
+# nrow(el)
 
 ```
 
+So, what does the raw process consist of ? With bupaR, we can easily visualise a process by plotting a process map. Let's have a look:
 
-test
+```{r}
+process_map(el)
+```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. 
+Well, stop right there ! The obvious comes to mind straight away - this ain't no simple map. If we want to break it down and get some insights into what's really going on in the workflow, let's ...
 
 More text 
 
