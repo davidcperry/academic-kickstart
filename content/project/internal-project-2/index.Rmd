@@ -26,7 +26,7 @@ url_video: ""
 slides: example
 ---
 
-Big Processes are a Big Topic in data analytics. This is particularly true in enterprises who are placing a heavy emphasis on operational efficiency and are looking to instill a culture of continuous improvement.
+Big Processes are a Big Topic in data analytics. This is particularly true ot late in enterprises who are placing a heavy emphasis on operational efficiency and are looking to instill a culture of continuous improvement.
 
 "Process mining" is a set of analytical techniques we can use to gain insights into the following types of questions:
 
