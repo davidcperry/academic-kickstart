@@ -35,7 +35,6 @@ Process mining is a a set of analytical techniques we can use to gain insights i
 - Process discovery - what is really happening, understand the current process, especially where no previous odel of a process may exist
 
 - How often are activities performed ?
-
 - Who are the fastest at performing certain tasks ?
 
 - What is the "cycle" time ? What is the "waiting" time ?
@@ -48,14 +47,14 @@ Tools like R provide an ideal platform for getting into a journey of process min
 
 There is a brilliant R library centered on process mining from the people here:
 
-```{r}
+```{r do_citation, warning=FALSE}
 library(bupaR)
 citation("bupaR")
 ```
 
 I'm going to use buparR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
 
-```{r}
+```{r get_the_data, warning=FALSE}
 
 library(bupaR)
 library(processanimateR)
@@ -67,16 +66,13 @@ animate_process(eldata)
 # eldata
 nrow(eldata)
 
-
 ```
 
-  
 
-<<<<<<< HEAD
 test
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. 
 =======
 
 More text 
->>>>>>> aaada50e61975b40e70b0972c2045ad04406cae1
+
