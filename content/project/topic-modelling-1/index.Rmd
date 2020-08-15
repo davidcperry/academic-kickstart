@@ -26,9 +26,4 @@ url_video: ""
 slides: example
 ---
 
-```{r}
-
-
-```
-
 This is coming soon..
