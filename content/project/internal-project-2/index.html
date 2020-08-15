@@ -46,12 +46,20 @@ slides: example
 <script src="/rmarkdown-libs/viz.js/full.render.js"></script>
 
 
-<pre class="r"><code>cars &lt;- c(1, 3, 6, 1, 1, 1, 2, 3, 4, 5)
-
-# Graph the cars vector with all defaults
-plot(cars)
-
-library(bupaR)</code></pre>
+<p>Big Processes are a Big Topic in data analytics. This is particularly true in enterprises who are placing a heavy emphasis on operational efficiency and are looking to move towards a culture of continual improvement.</p>
+<p>One of the ways businesses are tackling process analysis is via techniques like “process mining”.</p>
+<p>Process mining is a a set of analytical techniques we can use to gain insights into the following types of questions:</p>
+<ul>
+<li><p>Process discovery - what is really happening, understand the current process, especially where no previous odel of a process may exist</p></li>
+<li><p>How often are activities performed ?</p></li>
+<li><p>Who are the fastest at performing certain tasks ?</p></li>
+<li><p>What is the “cycle” time ? What is the “waiting” time ?</p></li>
+<li><p>How often do “handoffs” occur ?</p></li>
+<li><p>… and many other questions !</p></li>
+</ul>
+<p>Tools like R provide an ideal platform for getting into a journey of process mining.</p>
+<p>There is a brilliant R library centered on process mining from the people here:</p>
+<pre class="r"><code>library(bupaR)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;bupaR&#39;</code></pre>
 <pre><code>## The following object is masked from &#39;package:stats&#39;:
@@ -60,8 +68,25 @@ library(bupaR)</code></pre>
 <pre><code>## The following object is masked from &#39;package:utils&#39;:
 ## 
 ##     timestamp</code></pre>
-<p><img src="/project/internal-project-2/index_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<pre class="r"><code>library(processanimateR)
+<pre class="r"><code>citation(&quot;bupaR&quot;)</code></pre>
+<pre><code>## 
+## To cite package &#39;bupaR&#39; in publications use:
+## 
+##   Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R
+##   package version 0.4.4. https://CRAN.R-project.org/package=bupaR
+## 
+## A BibTeX entry for LaTeX users is
+## 
+##   @Manual{,
+##     title = {bupaR: Business Process Analysis in R},
+##     author = {Gert Janssenswillen},
+##     year = {2020},
+##     note = {R package version 0.4.4},
+##     url = {https://CRAN.R-project.org/package=bupaR},
+##   }</code></pre>
+<p>I’m going to use buparR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data.</p>
+<pre class="r"><code>library(bupaR)
+library(processanimateR)
 eldata &lt;- read_xes(&quot;G:/OneDrive/Documents/buparProject/data/GT_p1_t1.xes&quot;)</code></pre>
 <pre><code>## Warning: `data_frame()` is deprecated as of tibble 1.1.0.
 ## Please use `tibble()` instead.
@@ -83,5 +108,10 @@ eldata &lt;- read_xes(&quot;G:/OneDrive/Documents/buparProject/data/GT_p1_t1.xes
 <pre class="r"><code># eldata
 nrow(eldata)</code></pre>
 <pre><code>## [1] 676</code></pre>
-<p>test</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.</p>
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+test</p>
+<div id="lorem-ipsum-dolor-sit-amet-consectetur-adipiscing-elit.-duis-posuere-tellus-ac-convallis-placerat." class="section level1">
+<h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.</h1>
+<p>More text
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; aaada50e61975b40e70b0972c2045ad04406cae1</p>
+</div>
