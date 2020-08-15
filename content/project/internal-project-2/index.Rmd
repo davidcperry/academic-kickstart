@@ -47,21 +47,39 @@ Tools like R provide an ideal platform for getting into a journey of process min
 
 There is a brilliant R library centered on process mining from the people here:
 
-```{r do_citation, warning=FALSE}
+  Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R package
+  version 0.4.4. https://CRAN.R-project.org/package=bupaR
+
+```{r do_initial, warning=FALSE, message=FALSE}
 library(bupaR)
-citation("bupaR")
 ```
 
-I'm going to use buparR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
+I'm going to use bupaR and its suite of packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
 
-```{r get_the_data, warning=FALSE}
+```{r get_the_data, warning=FALSE, message=FALSE}
 
 library(bupaR)
+library(readxl)
 library(processanimateR)
-eldata <- read_xes("G:/OneDrive/Documents/buparProject/data/GT_p1_t1.xes")
-process_map(eldata)
+eldata <- read_excel("G:/OneDrive/Documents/buparProject/datasfs/AuditExtract1.neutralise.xlsx")
 
-animate_process(eldata)
+wfted <- eldata
+
+wftel <- wfted %>%
+  mutate(status = "complete",
+         activity_instance = 1:nrow(.)) %>%
+  eventlog(
+    case_id = "AuditDealID",
+    activity_id = "StatusDescription",
+    activity_instance_id = "rowid",
+    lifecycle_id = "status",
+    timestamp = "CreatedTimestamp",
+    resource_id = "ResourceName2"
+  )
+
+process_map(wftel)
+
+# animate_process(eldata)
 
 # eldata
 nrow(eldata)
@@ -72,7 +90,6 @@ nrow(eldata)
 test
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. 
-=======
 
 More text 
 
