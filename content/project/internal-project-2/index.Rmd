@@ -32,17 +32,12 @@ One of the ways businesses are tackling process analysis is via techniques like 
 
 Process mining is a a set of analytical techniques we can use to gain insights into the following types of questions:
 
-- Process discovery - what is really happening ? How can we understand the current process, especially where no formal model artefacts may exist ?
-
-- How often are activities performed ?
-
-- Who are the fastest at performing certain tasks ?
-
-- What is the "cycle" time ? What is the "waiting" time ?
-
-- How often do "handoffs" occur ?
-
-- ... and many other questions !
+* Process discovery - what is really happening ? How can we understand the current process, especially where no formal model artefacts may exist ?
+* How often are activities performed ?
+* Who are the fastest at performing certain tasks ?
+* What is the "cycle" time ? What is the "waiting" time ?
+* How often do "handoffs" occur ?
+  ... and many other questions !
 
 Tools like R provide an ideal platform for getting into a journey of process mining.
 
@@ -51,16 +46,17 @@ There is a brilliant R library centered on process mining from the people here:
   Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R package
   version 0.4.4. https://CRAN.R-project.org/package=bupaR
 
-I'm going to use bupaR and its suite of related packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. I've synthesised this data for demonstration purposes. 
+I'm going to use bupaR and its suite of related packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
 
 Business process management (BPM) or typical workflow type applications which are ubiquitous in corporate settings are a common candidate for this type of data supply for analysis.
+
+I've synthesised some data for demonstration purposes. The data resembles the output transaction event log of loan originations processing for a financial services organisation.
 
 First up, get the data from an Excel file I created earlier:
 
 ```{r get_the_data, warning=FALSE, message=FALSE}
 
 library(readxl)
-
 auditextract <- read_excel("G:/OneDrive/Documents/bupaR/AuditExtract1.xlsx")
 
 ```
@@ -91,11 +87,38 @@ el <- auditextract %>%
 
 So, what does the raw process consist of ? With bupaR, we can easily visualise a process by plotting a process map. Let's have a look:
 
-```{r}
+```{r do_map, warning=FALSE, message=FALSE}
 process_map(el)
 ```
 
-Well, stop right there ! The obvious comes to mind straight away - this ain't no simple map. If we want to break it down and get some insights into what's really going on in the workflow, let's ...
+Well, wait right there ! The obvious comes to mind straight away - this ain't no simple map. If we want to break it down and get some insights into what's really going on in the workflow, let's do the following.
 
-More text 
+The process consists of a set of 5 stages, and for each stage a set of associated statuses. For example, for the stage "Start Application", status moves through "Moved into queue", "Assigned to James", "Started application processing" and so on. 
+
+The following R code will collapse the sets of statuses for each stage, so that we can get a higher level picture of the workflow. 
+
+```{r do_collapse, warning=FALSE, message=FALSE}
+library(dplyr)
+qs <- auditextract %>% distinct(objectTypeDesc, StatusDescription)
+
+el <- el %>%
+  act_collapse(StartApplication = filter(qs, objectTypeDesc=='Start Application')$StatusDescription) %>%
+  act_collapse(UploadDocuments = filter(qs, objectTypeDesc=='Upload Documents')$StatusDescription) %>%
+  act_collapse(Settlement = filter(qs, objectTypeDesc=='Settlement')$StatusDescription) %>%
+  act_collapse(ProcessDocuments = filter(qs, objectTypeDesc=='Process Documents')$StatusDescription) %>%
+  act_collapse(Disburse = filter(qs, objectTypeDesc=='Disburse')$StatusDescription) %>%
+  act_collapse(StartDocuments = filter(qs, objectTypeDesc=='Start Documents')$StatusDescription) 
+```
+
+Let's have a look at the process map now: 
+
+```{r map_2, warning=FALSE, message=FALSE}
+process_map(el)
+```
+
+Now we can start to get a picture of what's going on in there !
+
+
+
+More to come ...
 
