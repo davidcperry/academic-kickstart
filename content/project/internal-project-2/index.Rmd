@@ -26,13 +26,13 @@ url_video: ""
 slides: example
 ---
 
-Big Processes are a Big Topic in data analytics. This is particularly true in enterprises who are placing a heavy emphasis on operational efficiency and are looking to move towards a culture of continual improvement.
+Big Processes are a Big Topic in data analytics. This is particularly true in enterprises who are placing a heavy emphasis on operational efficiency and are looking to instill a culture of continuous improvement.
 
-One of the ways businesses are tackling process analysis is via techniques like "process mining". 
+"Process mining" is a set of analytical techniques we can use to gain insights into the following types of questions:
 
-Process mining is a a set of analytical techniques we can use to gain insights into the following types of questions:
-
-* Process discovery - what is really happening ? How can we understand the current process, especially where no formal model artefacts may exist ?
+* Process discovery 
+    + What is really happening in the workforce ? 
+    + How can we understand the current process ? Especially where no formal model artefacts may exist.
 * How often are activities performed ?
 * Who are the fastest at performing certain tasks ?
 * What is the "cycle" time ? What is the "waiting" time ?
@@ -42,11 +42,10 @@ Process mining is a a set of analytical techniques we can use to gain insights i
 Tools like R provide an ideal platform for getting into a journey of process mining.
 
 There is a brilliant R library centered on process mining from the people here:
-
-  Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R package
-  version 0.4.4. https://CRAN.R-project.org/package=bupaR
-
-I'm going to use bupaR and its suite of related packages to explore a dataset of transactional event log type data to learn a bit about the processes associated this data. 
+{{% alert note %}}
+Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R package version 0.4.4. https://CRAN.R-project.org/package=bupaR
+{{% /alert %}}
+I'm going to use bupaR and its suite of related packages to explore a dataset of transactional event log type data to learn a bit about the processes associated with this data. 
 
 Business process management (BPM) or typical workflow type applications which are ubiquitous in corporate settings are a common candidate for this type of data supply for analysis.
 
@@ -117,6 +116,13 @@ process_map(el)
 ```
 
 Now we can start to get a picture of what's going on in there !
+
+One of bupaR's coolest features is the ability to animate a process. Check this out:
+
+```{r animate_1, warning=FALSE, message=FALSE}
+animate_process(el)
+```
+
 
 
 
