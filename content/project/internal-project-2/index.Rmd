@@ -47,11 +47,9 @@ Gert Janssenswillen (2020). bupaR: Business Process Analysis in R. R package ver
 {{% /alert %}}
 I'm going to use bupaR and its suite of related packages to explore a dataset of transactional event log type data to learn a bit about the processes associated with this data. 
 
-Business process management (BPM) or typical workflow type applications which are ubiquitous in corporate settings are a common candidate for this type of data supply for analysis.
+"Workflow" type applications are ubiquitous in corporate settings and are a common candidate for this type of data supply for analysis. You may be able to find good candidates for sourcing this type of data in your workplace. For demonstration purposes here, I've synthesised some data. I've created the data to resemble the transaction log of loan originations operations for a financial services organisation.
 
-I've synthesised some data for demonstration purposes. The data resembles the output transaction event log of loan originations processing for a financial services organisation.
-
-First up, get the data from an Excel file I created earlier:
+First up, get the data from an Excel file I created:
 
 ```{r get_the_data, warning=FALSE, message=FALSE}
 
@@ -60,7 +58,7 @@ auditextract <- read_excel("G:/OneDrive/Documents/bupaR/AuditExtract1.xlsx")
 
 ```
 
-Then, load up the required bupaR libraries and create an event log object from the source while mapping the relevant columns into the event log construct in bupaR:
+Then, load up the required bupaR libraries and create an event log object from the source while mapping the relevant columns into the event log construct in bupaR. I won't go into all the details of the event data model here - it's relatively simple - an event belongs to a case, and a case is an instance of the process. You can read about the model in more detail the bupaR site.
 
 ```{r create_event_log, warning=FALSE, message=FALSE}
 
@@ -115,7 +113,9 @@ Let's have a look at the process map now:
 process_map(el)
 ```
 
-Now we can start to get a picture of what's going on in there !
+Now we can start to get a picture of what's going on in there ! 
+
+The default provides a view of volume movements - for example we can see 9 cases moved from the start to "Start Application", 19 moved to "Process Documents" and so on. 
 
 In [Part 2 of Process Mining](/project/internal-project-3/) I'll show a little more of the capabilities of analysis of processes including how to animate the process map !
 
