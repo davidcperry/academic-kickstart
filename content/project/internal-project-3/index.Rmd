@@ -3,7 +3,7 @@ title: Process Mining - Part 2
 summary: Part 2 on the topic of Process Mining
 tags:
 - Process Mining
-date: "2020-08-16T00:00:00Z"
+date: "2020-08-10T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -25,7 +25,7 @@ url_video: ""
 #   Otherwise, set `slides = ""`.
 slides: example
 ---
-This is a continuation on the topic of process mining. 
+This is a continuation from [Part 1](/project/internal-project-2/) on the topic of process mining. 
 
 ```{r get_the_data, echo=FALSE, warning=FALSE, message=FALSE}
 
@@ -34,6 +34,7 @@ auditextract <- read_excel("G:/OneDrive/Documents/bupaR/AuditExtract1.xlsx")
 
 library(bupaR)
 library(processanimateR)
+library(edeaR)
 
 el <- auditextract %>%
   mutate(status = "complete",
@@ -60,11 +61,30 @@ el <- el %>%
 
 ```
 
-One of bupaR's coolest features is the ability to animate a process. Check this out:
+One of bupaR's coolest features is the ability to animate a process. The animation represents the movement of cases through the processes, based on the timing data. Check this out:
 
 ```{r animate_1, warning=FALSE, message=FALSE}
 animate_process(el)
 ```
+
+In the following sections, I'll list a quick rundown of a few more features from bupaR. Really, this is just scratching the surface of what bupaR and process mining can provide - I encourage you if you're interested in this topic to check out bupaR and start a journey of your own.
+
+We can add a measure of performance in terms of timing to the process map. Here I've added median minutes for the activities, with a view of relative frequencies (replacing the absolute frequencies we saw earlier). We can see clearly now that the movement from "Upload Documents" to "Process Documents" is the heaviest consumer of the timing at over 78 minutes:
+
+```{r process_map_performance, warning=FALSE, message=FALSE}
+el %>%
+process_map(type_nodes = frequency("relative_case"), performance(median, "mins", color_scale = "Purples"))
+
+```
+
+
+```{r process_map_resource1, warning=FALSE, message=FALSE}
+el %>%
+  filter(objectTypeDesc == 'Settlement') %>%
+  resource_involvement("resource") %>%
+  plot
+```
+
 
 
 

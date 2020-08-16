@@ -115,7 +115,7 @@ process_map(el)
 
 Now we can start to get a picture of what's going on in there ! 
 
-The default provides a view of volume movements - for example we can see 9 cases moved from the start to "Start Application", 19 moved to "Process Documents" and so on. 
+The default provides is annotated with frequencies of activity flow - for example we can see 9 cases moved from the start to "Start Application", 19 moved to "Process Documents" and so on. 
 
 In [Part 2 of Process Mining](/project/internal-project-3/) I'll show a little more of the capabilities of analysis of processes including how to animate the process map !
 
