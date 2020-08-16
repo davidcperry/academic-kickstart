@@ -77,7 +77,7 @@ elc %>%
 
 ```
 
-How is the ***workload** distributed amongst the team ? Let's have a look at just that Settlement activity and see:
+How is the **workload** distributed amongst the team ? Let's have a look at just that Settlement activity and see:
 
 ```{r process_map_resource1, warning=FALSE, message=FALSE}
 el %>%
