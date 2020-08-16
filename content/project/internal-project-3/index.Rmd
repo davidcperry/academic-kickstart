@@ -1,0 +1,84 @@
+---
+title: Process Mining - Part 2
+summary: Part 2 on the topic of Process Mining
+tags:
+- Process Mining
+date: "2020-08-16T00:00:00Z"
+
+# Optional external URL for project (replaces project detail page).
+external_link: ""
+
+image:
+  caption: Photo by rawpixel on Unsplash
+  focal_point: Smart
+
+
+url_code: ""
+url_pdf: ""
+url_slides: ""
+url_video: ""
+
+# Slides (optional).
+#   Associate this project with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
+#   Otherwise, set `slides = ""`.
+slides: example
+---
+This is a continuation on the topic of process mining. 
+
+```{r get_the_data, warning=FALSE, message=FALSE}
+
+library(readxl)
+auditextract <- read_excel("G:/OneDrive/Documents/bupaR/AuditExtract1.xlsx")
+
+```
+
+Load up the required bupaR libraries again.
+
+```{r create_event_log, warning=FALSE, message=FALSE}
+
+library(bupaR)
+library(processanimateR)
+
+el <- auditextract %>%
+  mutate(status = "complete",
+         activity_instance = 1:nrow(.)) %>%
+  eventlog(
+    case_id = "AuditCaseID",
+    activity_id = "StatusDescription",
+    activity_instance_id = "rowid",
+    lifecycle_id = "status",
+    timestamp = "CreatedTimestamp",
+    resource_id = "ResourceName2"
+  )
+
+# animate_process(eldata)
+# nrow(el)
+
+```
+
+
+```{r do_collapse, warning=FALSE, message=FALSE}
+library(dplyr)
+qs <- auditextract %>% distinct(objectTypeDesc, StatusDescription)
+
+el <- el %>%
+  act_collapse(StartApplication = filter(qs, objectTypeDesc=='Start Application')$StatusDescription) %>%
+  act_collapse(UploadDocuments = filter(qs, objectTypeDesc=='Upload Documents')$StatusDescription) %>%
+  act_collapse(Settlement = filter(qs, objectTypeDesc=='Settlement')$StatusDescription) %>%
+  act_collapse(ProcessDocuments = filter(qs, objectTypeDesc=='Process Documents')$StatusDescription) %>%
+  act_collapse(Disburse = filter(qs, objectTypeDesc=='Disburse')$StatusDescription) %>%
+  act_collapse(StartDocuments = filter(qs, objectTypeDesc=='Start Documents')$StatusDescription) 
+```
+
+One of bupaR's coolest features is the ability to animate a process. Check this out:
+
+```{r animate_1, warning=FALSE, message=FALSE}
+animate_process(el)
+```
+
+
+
+More to come ...
+

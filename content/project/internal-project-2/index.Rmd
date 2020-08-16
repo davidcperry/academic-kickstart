@@ -1,5 +1,5 @@
 ---
-title: Process Mining
+title: Process Mining - Part 1
 summary: On using data analysis to understand business processes
 tags:
 - Process Mining
@@ -26,7 +26,7 @@ url_video: ""
 slides: example
 ---
 
-Big Processes are a Big Topic in data analytics. This is particularly true ot late in enterprises who are placing a heavy emphasis on operational efficiency and are looking to instill a culture of continuous improvement.
+Big Processes are a Big Topic in data analytics. This is particularly true of late in enterprises who are placing a heavy emphasis on operational efficiency and are looking to instill a culture of continuous improvement.
 
 "Process mining" is a set of analytical techniques we can use to gain insights into the following types of questions:
 
@@ -117,14 +117,6 @@ process_map(el)
 
 Now we can start to get a picture of what's going on in there !
 
-One of bupaR's coolest features is the ability to animate a process. Check this out:
+In [Part 2 of Process Mining](/project/internal-project-3/) I'll show a little more of the capabilities of analysis of processes including how to animate the process map !
 
-```{r animate_1, warning=FALSE, message=FALSE}
- animate_process(el)
-```
-
-
-
-
-More to come ...
 
