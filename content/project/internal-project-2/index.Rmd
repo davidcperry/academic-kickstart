@@ -120,7 +120,7 @@ Now we can start to get a picture of what's going on in there !
 One of bupaR's coolest features is the ability to animate a process. Check this out:
 
 ```{r animate_1, warning=FALSE, message=FALSE}
-animate_process(el)
+ animate_process(el)
 ```
 
 
