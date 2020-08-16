@@ -86,7 +86,7 @@ el %>%
   plot()
 ```
  
-In buparR, "traces" show the different activity sequences that occur. It may be of interest to view both the most common and least common sequences. Here we will narrow down again to just that Settlement activity to see how the statuses move in different sequences within there:
+In bupaR, "traces" show the different activity sequences that occur. It may be of interest to view both the most common and least common sequences. Here we will narrow down again to just that Settlement activity to see how the statuses move in different sequences within there:
 
 ```{r process_map_traces1, warning=FALSE, message=FALSE}
 el %>%
@@ -95,5 +95,5 @@ el %>%
 ```
 
 
-Thanks for reading !
+Thanks for reading !!
 
