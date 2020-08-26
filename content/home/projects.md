@@ -31,6 +31,10 @@ subtitle = ""
      tag = "Process Mining"
   
    [[content.filter_button]]
+     name = "Social Network Analytics"
+     tag = "Social Network Analytics"
+  
+   [[content.filter_button]]
      name = "Other"
      tag = "Demo"
 
